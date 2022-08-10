@@ -1,15 +1,14 @@
 <template>
-  <hello-world />
+  <div><times-table/>adfgadfjgh</div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld'
-
+import TimesTable from '@/components/TimesTable'
 export default {
-  name: 'Home',
+  name: 'HomeView',
 
   components: {
-    HelloWorld
+    TimesTable
   }
 }
 </script>

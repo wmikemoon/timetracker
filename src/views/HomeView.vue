@@ -1,5 +1,5 @@
 <template>
-  <div><times-table/>adfgadfjgh</div>
+  <div><times-table/></div>
 </template>
 
 <script>

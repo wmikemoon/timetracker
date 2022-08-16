@@ -1,28 +1,36 @@
 <template>
   <div>
-    {{ items }}
-    {{ thingIClicked }}
-    <v-list>
-      <v-list-item
-        v-for="(item, index) of items"
-        :key="index"
+    <v-toolbar dense>
+      <v-toolbar-title>TimeTracker</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn>
+        Links
+      </v-btn>
+
+      <v-btn>
+        Features
+      </v-btn>
+
+    </v-toolbar>
+    <v-container>
+      <v-data-table
+        v-model="selected"
+        :headers="headers"
+        :items="events"
+        :single-select="singleSelect"
+        :items-per-page="5"
+        show-select
+        class="elevation-1"
+      ></v-data-table>
+      <v-btn
+      fab
+      large
       >
-        <v-list-item-content
-          v-if="index !== 2"
-        >
-            {{ index }} {{ item }}
-        </v-list-item-content>
-        <v-list-item-action>
-          <v-btn
-            text
-            color="primary darken-2"
-            @click="youClickedIt(item)"
-          >
-            btn
-          </v-btn>
-        </v-list-item-action>
-      </v-list-item>
-    </v-list>
+        <v-icon>mdi-plus-circle-outline</v-icon>
+      </v-btn>
+    </v-container>
   </div>
 </template>
 
@@ -31,8 +39,27 @@ export default {
   name: 'TimesTable',
   data: function () {
     return {
+      singleSelect: false,
+      selected: [],
       items: ['hello', 'world', 'good', 'bye'],
-      headers: [],
+      headers: [
+        {
+          text: 'Description',
+          align: 'start',
+          sortable: true
+        },
+        {
+          text: 'Start Time',
+          sortable: true
+        },
+        {
+          text: 'End Time',
+          sortable: true
+        },
+        {
+          text: 'Duration',
+          sortable: true
+        }],
       thingIClicked: 'NOTHING'
     }
   },

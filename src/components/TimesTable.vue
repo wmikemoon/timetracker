@@ -23,14 +23,18 @@
         :items-per-page="5"
         show-select
         class="elevation-1"
-      ></v-data-table>
-      <v-btn
+      >
+      </v-data-table>
+    </v-container>
+    <v-btn
+      color="green"
       fab
+      absolute
+      right
       large
       >
         <v-icon>mdi-plus-circle-outline</v-icon>
-      </v-btn>
-    </v-container>
+    </v-btn>
   </div>
 </template>
 
